@@ -25,10 +25,15 @@ public class App {
   }
   void run() {
     init();
-    System.out.println(fuzzySorted.get(finder.binarySearch(fuzzySorted)).color);
-    printArray(new FuzzyListGenerator(4).sortedRainbowFuzzies());
-    System.out.println();
-    printArray(new FuzzyListGenerator(4).randomizedRainbowFuzzies());
+    int binarySortedTest = finder.binarySearch(fuzzySorted);
+    int binaryRandomTest = finder.binarySearch(fuzzyRandom);
+    int linearSortedTest = finder.linearSearch(fuzzySorted);
+    int linearRandomTest = finder.linearSearch(fuzzyRandom);
+
+    System.out.println("binarySortedTest = " + binarySortedTest);
+    System.out.println("binaryRandomTest = " + binaryRandomTest);
+    System.out.println("linearSortedTest = " + linearSortedTest);
+    System.out.println("linearRandomTest = " + linearRandomTest);
   }
   public static void main(String[] args) {
     new App().run();
